@@ -57,6 +57,15 @@
     ;; Cider Auto-Complete
     ac-cider
 
+    ;; Markdown-mode
+    markdown-mode
+
+    ;; Yaml-mode
+    yaml-mode
+
+    ;; SCSS mode
+    scss-mode
+
     ;; allow ido usage in as many contexts as possible. see
     ;; customizations/navigation.el line 23 for a description
     ;; of ido
@@ -142,6 +151,8 @@
 ;; Langauage-specific
 (load "setup-clojure.el")
 (load "setup-js.el")
+(load "setup-markdown.el")
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -150,7 +161,7 @@
  '(coffee-tab-width 2)
  '(package-selected-packages
    (quote
-    (smooth-scrolling ac-cider popup auto-complete tagedit smex rainbow-delimiters projectile paredit magit ido-ubiquitous exec-path-from-shell clojure-mode-extra-font-locking cider ac-cider))))
+    (markdown-mode smooth-scrolling ac-cider popup auto-complete tagedit smex rainbow-delimiters projectile paredit magit ido-ubiquitous exec-path-from-shell clojure-mode-extra-font-locking cider))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
