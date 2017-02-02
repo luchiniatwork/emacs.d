@@ -23,7 +23,8 @@
                ("(\\(background?\\)"
                 (1 font-lock-keyword-face))))
             (define-clojure-indent (fact 1))
-            (define-clojure-indent (facts 1))))
+            (define-clojure-indent (facts 1))
+            (local-set-key (kbd "RET") 'newline-and-indent)))
 
 ;;;;
 ;; Cider
