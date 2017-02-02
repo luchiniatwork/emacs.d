@@ -68,5 +68,9 @@
 ;; no bell
 (setq ring-bell-function 'ignore)
 
-;; makes scrolling less aggressive to my taste
+;; makes keyboard scrolling less aggressive to my taste
 (setq next-screen-context-lines 30)
+
+;; makes mouse scrolling more fluid
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil)))
+(setq mouse-wheel-progressive-speed nil)
