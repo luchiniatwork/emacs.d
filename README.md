@@ -1,20 +1,10 @@
-# this is a Clojure-friendly emacs config
+# My own emacs config
+
+It's mostly an evolution to my own taste from the Clojure-friendly
+emacs config from [Clojure for the Brave and True](http://www.braveclojure.com/basic-emacs/).
 
 If you're new to emacs, check out
 [this introductory tutorial](http://www.braveclojure.com/basic-emacs/)!
-
-## WARNING
-
-This project uses an outdated version of
-[CIDER](https://github.com/clojure-emacs/cider), the package that
-provides much of the functionality for Clojure development. If you run
-into issues, try upgrading (instructions below).
-
-Why not just update this package to use the latest CIDER, you ask?
-This project uses CIDER 0.8.1 so that
-[Clojure for the Brave and True](http://www.braveclojure.com/basic-emacs/)
-readers are less likely to get confused as they use Emacs for the
-first time.
 
 ## Installing
 
@@ -25,51 +15,20 @@ first time.
    would delete `C:\Users\jason\AppData\Roaming\.emacs.d`.) This is
    where Emacs looks for configuration files, and deleting these files
    and directories will ensure that you start with a clean slate.
-3. Download the Emacs
-   [configuration zip file](https://github.com/flyingmachine/emacs-for-clojure/archive/book1.zip)
-   and unzip it. Its contents should be a folder,
-   `emacs-for-clojure-book1`. Run `mv path/to/emacs-for-clojure-book1
-   ~/.emacs.d`.
+3. Clone the contents of this repo into `~/.emacs.d`
 4. Create the file `~/.lein/profiles.clj` (Windows users, this is
    probably `C:\Users\your_user_name\.lein\profiles.clj`) and add this
    line to it:
 
 ```clojure
-{:user {:plugins [[cider/cider-nrepl "0.8.1"]]}} 
+{:user {:plugins [[cider/cider-nrepl "0.15.0-snapshot"]]}} 
 ```
 
-Then open Emacs.
-
-## Upgrading
-
-Before upgrading, ensure that your `.emacs.d` directory is under
-version control so that you can always revert to a known good state.
-
-To upgrade:
-
-1. Edit `.emacs.d/init.el`, adding these lines after line 12:
-
-   ```elisp
-   (add-to-list 'package-archives
-                '("melpa-stable" . "http://stable.melpa.org/packages/") t)
-   
-   (add-to-list 'package-pinned-packages '(cider . "melpa-stable") t)
-   ```
-
-2. Close Emacs.
-3. Run `rm -Rf .emacs.d/elpa/cider-*`
-4. Open Emacs. You'll probably see some errors and your theme won't
-   load. That's ok.
-5. In Emacs, run `M-x package-refresh contents`.
-6. In Emacs, run `M-x package-install cider`.
-7. Close and re-open Emacs.
-8. Open `.lein/profiles.clj` and remove `[cider/cider-nrepl "0.8.1"]` from it.
-
-That should install the latest version. Enjoy!
+Last but not least, open Emacs.
 
 ## Organization
 
-I've tried to separate everything logically and document the purpose
+There's an effort to separate everything logically and document the purpose
 of every line. [`init.el`](./init.el) acts as a kind of table of
 contents.  It's a good idea to eventually go through `init.el` and the
 files under the `customizations` directory so that you know exactly
