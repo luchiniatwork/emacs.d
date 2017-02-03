@@ -44,6 +44,20 @@
 (setq auto-save-default nil)
 
 
+;; Basic colors - not the distracting, all-over-the-place colors
+(setq whitespace-style (quote (spaces tabs newline space-mark tab-mark newline-mark)))
+
+;; Make space-mark look like middle dot, newline as an arrow and tab as a right arrow
+(setq whitespace-display-mappings
+      '(
+        (space-mark 32 [183])
+        (newline-mark 10 [8629 10])
+        (tab-mark 9 [8614 9] [92 9])
+        ))
+
+;; Enable whitespace
+(global-whitespace-mode 1)
+
 ;; comments
 (defun toggle-comment-on-line ()
   "comment or uncomment current line"
