@@ -87,6 +87,9 @@
 
     ;; git integration
     magit
+
+    ;; because sometimes moving windows around is just simpler with this
+    transpose-frame
     ))
 
 ;; On OS X, an Emacs instance started from the graphical user
