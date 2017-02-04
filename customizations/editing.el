@@ -45,7 +45,7 @@
 
 
 ;; Basic colors - not the distracting, all-over-the-place colors
-(setq whitespace-style (quote (spaces tabs newline space-mark tab-mark newline-mark)))
+(setq whitespace-style (quote (spaces tabs newline tab-mark newline-mark)))
 
 ;; Make space-mark look like middle dot, newline as an arrow and tab as a right arrow
 (setq whitespace-display-mappings
