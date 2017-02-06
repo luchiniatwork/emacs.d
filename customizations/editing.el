@@ -84,3 +84,16 @@
     (quit nil)))
 
 (setq electric-indent-mode nil)
+
+;; enabling and setting up git-gutter 
+(global-git-gutter-mode 1)
+(custom-set-variables
+ '(git-gutter:update-interval 2))
+
+(custom-set-variables
+ '(git-gutter:hide-gutter t))
+
+(custom-set-variables
+ '(git-gutter:modified-sign "*") ;; two space
+ '(git-gutter:added-sign "+")    ;; multiple character is OK
+ '(git-gutter:deleted-sign "-"))

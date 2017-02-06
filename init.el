@@ -88,6 +88,9 @@
     ;; git integration
     magit
 
+    ;; git-gutter shows git changes on the gutter
+    git-gutter
+
     ;; because sometimes moving windows around is just simpler with this
     transpose-frame
     ))
@@ -164,7 +167,7 @@
  '(coffee-tab-width 2)
  '(package-selected-packages
    (quote
-    (markdown-mode smooth-scrolling ac-cider popup auto-complete tagedit smex rainbow-delimiters projectile paredit magit ido-ubiquitous exec-path-from-shell clojure-mode-extra-font-locking cider))))
+    (git-gutter markdown-mode smooth-scrolling ac-cider popup auto-complete tagedit smex rainbow-delimiters projectile paredit magit ido-ubiquitous exec-path-from-shell clojure-mode-extra-font-locking cider))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
