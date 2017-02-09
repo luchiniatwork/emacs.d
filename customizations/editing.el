@@ -45,7 +45,7 @@
 
 
 ;; Basic colors - not the distracting, all-over-the-place colors
-(setq whitespace-style (quote (spaces tabs newline tab-mark newline-mark)))
+(setq whitespace-style (quote (spaces tabs newline tab-mark newline-mark empty)))
 
 ;; Make space-mark look like middle dot, newline as an arrow and tab as a right arrow
 (setq whitespace-display-mappings
@@ -116,3 +116,6 @@
  '(git-gutter:modified-sign "*") ;; two space
  '(git-gutter:added-sign "+")    ;; multiple character is OK
  '(git-gutter:deleted-sign "-"))
+
+;; clean-up whitespace before saving
+(add-hook 'before-save-hook 'whitespace-cleanup)
