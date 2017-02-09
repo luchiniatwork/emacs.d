@@ -98,5 +98,6 @@
      (define-key clojure-mode-map (kbd "C-M-r") 'cider-refresh)
      (define-key clojure-mode-map (kbd "C-c u") 'cider-user-ns)
      (define-key clojure-mode-map (kbd "C-x C-j") 'cider-eval-buffer)
+     (define-key clojure-mode-map (kbd "C-x j") 'cider-eval-region)
      (define-key cider-mode-map (kbd "C-c u") 'cider-user-ns)
      (define-key cider-mode-map (kbd "C-x C-j") 'cider-eval-buffer)))
