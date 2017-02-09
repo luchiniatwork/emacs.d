@@ -61,12 +61,11 @@
 (setq ac-quick-help-delay 0.5)
 (ac-config-default)
 
-;; Auto-Coplete for cider
+;; Auto-Complete for cider
 (require 'ac-cider)
 (add-hook 'cider-mode-hook 'ac-flyspell-workaround)
 (add-hook 'cider-mode-hook 'ac-cider-setup)
 (add-hook 'cider-repl-mode-hook 'ac-cider-setup)
-(add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
 (eval-after-load "auto-complete"
   '(progn
      (add-to-list 'ac-modes 'cider-mode)
