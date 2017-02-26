@@ -58,12 +58,8 @@
 ;; Enable whitespace
 (global-whitespace-mode 1)
 
-;; comments
-(defun toggle-comment-on-line ()
-  "comment or uncomment current line"
-  (interactive)
-  (comment-or-uncomment-region (line-beginning-position) (line-end-position)))
-(global-set-key (kbd "C-;") 'toggle-comment-on-line)
+;; Comments or uncomments whole regions
+(global-set-key (kbd "C-x C-;") 'comment-or-uncomment-region)
 
 ;; yay rainbows!
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
