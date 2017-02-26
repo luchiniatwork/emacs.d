@@ -11,3 +11,5 @@ auto-save-list
 backups
 network-security.data
 elpa/
+.recentf~
+ido.last~
