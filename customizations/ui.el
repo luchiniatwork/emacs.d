@@ -26,15 +26,15 @@
 ;; for a more technical explanation.
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (add-to-list 'load-path "~/.emacs.d/themes")
-(load-theme 'tomorrow-night-eighties t)
+(load-theme 'monokai t)
 
-;; increase font size for better readability
-(set-face-attribute 'default nil :height 140)
+;; increase font size for better readability - Monaco is also lovely
+(set-face-attribute 'default nil :font "Monaco" :height 120)
 
 ;; Uncomment the lines below by removing semicolons and play with the
 ;; values in order to set the width (in characters wide) and height
 ;; (in lines high) Emacs will have whenever you start it
-(setq initial-frame-alist '((top . 0) (left . 0) (width . 170) (height . 46)))
+(setq initial-frame-alist '((top . 0) (left . 0) (width . 202) (height . 48)))
 
 ;; These settings relate to how emacs interacts with your operating system
 (setq ;; makes killing/yanking interact with the clipboard
@@ -56,8 +56,8 @@
       ;; Mouse yank commands yank at point instead of at click.
       mouse-yank-at-point t)
 
-;; No cursor blinking, it's distracting
-(blink-cursor-mode 0)
+;; Make sure cursor blinks
+(blink-cursor-mode 1)
 
 ;; full path in title bar
 (setq-default frame-title-format "%b (%f)")
