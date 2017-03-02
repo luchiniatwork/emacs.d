@@ -15,6 +15,7 @@ C-x b     go to another buffer
 C-x k     kill buffer
 C-x C-b   list all buffers
 C-x o     go to next window
+C-x 0     delete current window
 M-x flop  flop windows vertically
 M-x flip  flip windows horizontally
 C-c p f   open any file in the project
