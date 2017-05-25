@@ -71,6 +71,9 @@
      (add-to-list 'ac-modes 'cider-mode)
      (add-to-list 'ac-modes 'cider-repl-mode)))
 
+;; Making sure that linum is turned off on the REPL
+;; Performance is much better when it's off
+(add-hook 'cider-repl-mode-hook (lambda () (linum-mode -1)))
 
 ;; key bindings
 ;; these help me out with the way I usually develop web apps
