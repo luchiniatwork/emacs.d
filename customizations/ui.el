@@ -74,3 +74,10 @@
 ;; makes mouse scrolling more fluid
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil)))
 (setq mouse-wheel-progressive-speed nil)
+
+;; enables guide-key for easy out completion of key bindings
+(require 'guide-key)
+(setq guide-key/guide-key-sequence t)
+(setq guide-key/popup-window-position :bottom)
+(setq guide-key/idle-delay 0.5)
+(guide-key-mode 1)  ; Enable guide-key-mode
