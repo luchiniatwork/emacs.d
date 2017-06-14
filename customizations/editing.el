@@ -115,3 +115,23 @@
 
 ;; clean-up whitespace before saving
 (add-hook 'before-save-hook 'whitespace-cleanup)
+
+;; Navigation between window numbers
+(require 'window-number)
+(window-number-mode 1)
+
+
+;; Splits into 3 windows horizontally balanced
+(defun split-3-windows-horizontally-evenly ()
+  (interactive)
+  (command-execute 'delete-other-windows)
+  (command-execute 'split-window-horizontally)
+  (command-execute 'split-window-horizontally)
+  (command-execute 'balance-windows)
+)
+
+(global-set-key (kbd "C-x 4") 'split-3-windows-horizontally-evenly)
+
+
+;; Bind to the traditional C-x o that would normally be on `other-window`
+(global-set-key (kbd "C-x o") 'window-number-switch)
