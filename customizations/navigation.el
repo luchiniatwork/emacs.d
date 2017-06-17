@@ -59,3 +59,30 @@
 
 ;; projectile everywhere!
 (projectile-global-mode)
+
+;; clean-up whitespace before saving
+(add-hook 'before-save-hook 'whitespace-cleanup)
+
+;; Navigation between window numbers
+(require 'window-number)
+(window-number-mode 1)
+
+;; Splits into 3 windows horizontally balanced
+(defun split-3-windows-horizontally-evenly ()
+  (interactive)
+  (command-execute 'delete-other-windows)
+  (command-execute 'split-window-horizontally)
+  (command-execute 'split-window-horizontally)
+  (command-execute 'balance-windows))
+
+;; Bind split 3 way
+(global-set-key (kbd "C-x 4") 'split-3-windows-horizontally-evenly)
+
+;; Opposite of the traditional C-x o (other-window)
+(global-set-key (kbd "C-x p") 'previous-multiframe-window)
+
+;; Bind to the traditional C-x o that would normally be on `other-window`
+(global-set-key (kbd "C-c 1") (lambda () (interactive) (window-number-select 1)))
+(global-set-key (kbd "C-c 2") (lambda () (interactive) (window-number-select 2)))
+(global-set-key (kbd "C-c 3") (lambda () (interactive) (window-number-select 3)))
+(global-set-key (kbd "C-c 4") (lambda () (interactive) (window-number-select 4)))

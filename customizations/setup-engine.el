@@ -7,7 +7,15 @@
 
 (defengine google
   "https://www.google.com/#q=%s"
-  :keybinding "")
+  :keybinding "?")
+
+(defengine image
+  "https://www.google.com/search?q=%s&source=lnms&tbm=isch&sa=X"
+  :keybinding "i")
+
+(defengine amazon
+  "https://www.amazon.com/s?field-keywords=%s"
+  :keybinding "a")
 
 (defengine clojuredocs
   "https://clojuredocs.org/search?q=%s"

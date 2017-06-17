@@ -43,17 +43,14 @@
                                                "backups"))))
 (setq auto-save-default nil)
 
-
 ;; Basic colors - not the distracting, all-over-the-place colors
 (setq whitespace-style (quote (spaces tabs newline tab-mark newline-mark empty)))
 
 ;; Make space-mark look like middle dot, newline as an arrow and tab as a right arrow
 (setq whitespace-display-mappings
-      '(
-        (space-mark 32 [183])
+      '((space-mark 32 [183])
         (newline-mark 10 [8629 10])
-        (tab-mark 9 [8614 9] [92 9])
-        ))
+        (tab-mark 9 [8614 9] [92 9])))
 
 ;; Enable whitespace
 (global-whitespace-mode 1)
@@ -112,26 +109,3 @@
  '(git-gutter:modified-sign "*") ;; two space
  '(git-gutter:added-sign "+")    ;; multiple character is OK
  '(git-gutter:deleted-sign "-"))
-
-;; clean-up whitespace before saving
-(add-hook 'before-save-hook 'whitespace-cleanup)
-
-;; Navigation between window numbers
-(require 'window-number)
-(window-number-mode 1)
-
-
-;; Splits into 3 windows horizontally balanced
-(defun split-3-windows-horizontally-evenly ()
-  (interactive)
-  (command-execute 'delete-other-windows)
-  (command-execute 'split-window-horizontally)
-  (command-execute 'split-window-horizontally)
-  (command-execute 'balance-windows)
-)
-
-(global-set-key (kbd "C-x 4") 'split-3-windows-horizontally-evenly)
-
-
-;; Bind to the traditional C-x o that would normally be on `other-window`
-(global-set-key (kbd "C-x o") 'window-number-switch)

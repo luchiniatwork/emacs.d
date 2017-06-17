@@ -185,7 +185,7 @@
  '(org-agenda-files (quote ("~/.notes")))
  '(package-selected-packages
    (quote
-    (restclient engine-mode dockerfile-mode window-number dot-mode graphviz-dot-mode geeknote guide-key "guide-key" "discover-my-major" eshell-git-prompt docker company monokai-theme git-gutter markdown-mode smooth-scrolling ac-cider popup auto-complete tagedit smex rainbow-delimiters projectile paredit magit ido-ubiquitous exec-path-from-shell clojure-mode-extra-font-locking cider)))
+    (twittering-mode restclient engine-mode dockerfile-mode window-number dot-mode graphviz-dot-mode geeknote guide-key "guide-key" "discover-my-major" eshell-git-prompt docker company monokai-theme git-gutter markdown-mode smooth-scrolling ac-cider popup auto-complete tagedit smex rainbow-delimiters projectile paredit magit ido-ubiquitous exec-path-from-shell clojure-mode-extra-font-locking cider)))
  '(safe-local-variable-values
    (quote
     ((cider-cljs-lein-repl . "(do (user/run) (user/browser-repl))")
