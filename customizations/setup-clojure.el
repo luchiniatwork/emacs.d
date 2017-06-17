@@ -31,10 +31,10 @@
 ;;;;
 
 ;; provides minibuffer documentation for the code you're typing into the repl
-;; (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
+(add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
 
-;; go right to the REPL buffer when it's finished connecting
-(setq cider-repl-pop-to-buffer-on-connect t)
+;; We want the REPL buffer to be auto-displayed, but don't want it to be focused
+(setq cider-repl-pop-to-buffer-on-connect 'display-only)
 
 ;; When there's a cider error, show its buffer and switch to it
 (setq cider-show-error-buffer t)
@@ -46,6 +46,9 @@
 ;; Wrap when navigating history.
 (setq cider-repl-wrap-history t)
 
+;; Make the REPL always pretty-print the results of your evaluations
+(setq cider-repl-use-pretty-printing t)
+
 ;; enable paredit in your REPL
 (add-hook 'cider-repl-mode-hook 'paredit-mode)
 
@@ -55,51 +58,7 @@
 (add-to-list 'auto-mode-alist '("\\.cljs.*$" . clojure-mode))
 (add-to-list 'auto-mode-alist '("lein-env" . enh-ruby-mode))
 
-;; General Auto-Complete
-(require 'auto-complete-config)
-(setq ac-delay 0.0)
-(setq ac-quick-help-delay 0.5)
-(ac-config-default)
-
-;; Auto-Complete for cider
-(require 'ac-cider)
-(add-hook 'cider-mode-hook 'ac-flyspell-workaround)
-(add-hook 'cider-mode-hook 'ac-cider-setup)
-(add-hook 'cider-repl-mode-hook 'ac-cider-setup)
-(eval-after-load "auto-complete"
-  '(progn
-     (add-to-list 'ac-modes 'cider-mode)
-     (add-to-list 'ac-modes 'cider-repl-mode)))
-
-;; Making sure that linum is turned off on the REPL
-;; Performance is much better when it's off
-(add-hook 'cider-repl-mode-hook (lambda () (linum-mode -1)))
-
-;; key bindings
-;; these help me out with the way I usually develop web apps
-(defun cider-start-http-server ()
-  (interactive)
-  (cider-load-current-buffer)
-  (let ((ns (cider-current-ns)))
-    (cider-repl-set-ns ns)
-    (cider-interactive-eval (format "(println '(def server (%s/start))) (println 'server)" ns))
-    (cider-interactive-eval (format "(def server (%s/start)) (println server)" ns))))
-
-
-(defun cider-refresh ()
-  (interactive)
-  (cider-interactive-eval (format "(user/reset)")))
-
-(defun cider-user-ns ()
-  (interactive)
-  (cider-repl-set-ns "user"))
-
 (eval-after-load 'cider
   '(progn
-     (define-key clojure-mode-map (kbd "C-c C-v") 'cider-start-http-server)
-     (define-key clojure-mode-map (kbd "C-M-r") 'cider-refresh)
-     (define-key clojure-mode-map (kbd "C-c u") 'cider-user-ns)
      (define-key clojure-mode-map (kbd "C-x C-j") 'cider-eval-buffer)
-     (define-key clojure-mode-map (kbd "C-x j") 'cider-eval-region)
-     (define-key cider-mode-map (kbd "C-c u") 'cider-user-ns)
-     (define-key cider-mode-map (kbd "C-x C-j") 'cider-eval-buffer)))
+     (define-key clojure-mode-map (kbd "C-x j") 'cider-eval-region)))

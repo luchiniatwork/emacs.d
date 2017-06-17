@@ -49,7 +49,6 @@
 ;; Shows a list of buffers
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
-
 ;; Enhances M-x to allow easier execution of commands. Provides
 ;; a filterable list of possible commands in the minibuffer
 ;; http://www.emacswiki.org/emacs/Smex
@@ -86,3 +85,45 @@
 (global-set-key (kbd "C-c 2") (lambda () (interactive) (window-number-select 2)))
 (global-set-key (kbd "C-c 3") (lambda () (interactive) (window-number-select 3)))
 (global-set-key (kbd "C-c 4") (lambda () (interactive) (window-number-select 4)))
+
+;; enables guide-key for easy out completion of key bindings
+(require 'guide-key)
+(setq guide-key/guide-key-sequence t)
+(setq guide-key/popup-window-position :bottom)
+(setq guide-key/idle-delay 0.5)
+(guide-key-mode 1)  ; Enable guide-key-mode
+
+;; Enable engine-mode - it allows search engines to be used from within emacs
+;; Default key binding is C-x / followed by the engine (see below)
+(require 'engine-mode)
+(engine-mode t)
+
+;; Creating a dictionary search engine
+(defengine dictionary
+  "http://www.dictionary.com/browse/%s?s=t"
+  :keybinding "d")
+
+;; Creating a google search engine
+(defengine google
+  "https://www.google.com/#q=%s"
+  :keybinding "?")
+
+;; Creating a google image search engine
+(defengine image
+  "https://www.google.com/search?q=%s&source=lnms&tbm=isch&sa=X"
+  :keybinding "i")
+
+;; Creating an amazon search engine
+(defengine amazon
+  "https://www.amazon.com/s?field-keywords=%s"
+  :keybinding "a")
+
+;; Creating a clojuredocs search engine
+(defengine clojuredocs
+  "https://clojuredocs.org/search?q=%s"
+  :keybinding "c")
+
+;; Creating a clojars search engine
+(defengine clojars
+  "https://clojars.org/search?q=%s"
+  :keybinding "j")

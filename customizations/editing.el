@@ -12,6 +12,9 @@
         try-complete-lisp-symbol-partially
         try-complete-lisp-symbol))
 
+;; Enable global company mode - autocompletion for everything
+(global-company-mode)
+
 ;; Highlights matching parenthesis
 (show-paren-mode 1)
 
@@ -95,17 +98,12 @@
 (global-set-key (kbd "C-c x") 'pbcut)
 (global-set-key (kbd "C-c v") 'pbpaste)
 
-(setq electric-indent-mode nil)
+;; Ident automatically after every <RET>
+(setq electric-indent-mode t)
 
-;; enabling and setting up git-gutter 
-(global-git-gutter-mode 1)
-(custom-set-variables
- '(git-gutter:update-interval 2))
+;; shell scripts defaults
+(setq-default sh-basic-offset 2)
+(setq-default sh-indentation 2)
 
-(custom-set-variables
- '(git-gutter:hide-gutter t))
-
-(custom-set-variables
- '(git-gutter:modified-sign "*") ;; two space
- '(git-gutter:added-sign "+")    ;; multiple character is OK
- '(git-gutter:deleted-sign "-"))
+;; No need for ~ files when editing
+(setq create-lockfiles nil)

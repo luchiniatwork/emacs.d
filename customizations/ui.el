@@ -8,7 +8,7 @@
 (menu-bar-mode -1)
 
 ;; Show line numbers
-(global-linum-mode)
+;; (global-linum-mode)
 
 ;; You can uncomment this to remove the graphical toolbar at the top. After
 ;; awhile, you won't need the toolbar.
@@ -24,8 +24,8 @@
 ;; for a great explanation of emacs color themes.
 ;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Custom-Themes.html
 ;; for a more technical explanation.
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
-(add-to-list 'load-path "~/.emacs.d/themes")
+;; (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
+;; (add-to-list 'load-path "~/.emacs.d/themes")
 (load-theme 'monokai t)
 
 ;; increase font size for better readability - Monaco is also lovely
@@ -75,9 +75,21 @@
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil)))
 (setq mouse-wheel-progressive-speed nil)
 
-;; enables guide-key for easy out completion of key bindings
-(require 'guide-key)
-(setq guide-key/guide-key-sequence t)
-(setq guide-key/popup-window-position :bottom)
-(setq guide-key/idle-delay 0.5)
-(guide-key-mode 1)  ; Enable guide-key-mode
+;; enabling and setting up git-gutter 
+(global-git-gutter-mode 1)
+(custom-set-variables
+ '(git-gutter:update-interval 2))
+
+(custom-set-variables
+ '(git-gutter:hide-gutter t))
+
+(custom-set-variables
+ '(git-gutter:modified-sign "*") ;; two space
+ '(git-gutter:added-sign "+")    ;; multiple character is OK
+ '(git-gutter:deleted-sign "-"))
+
+;; Changes all yes/no questions to y/n type
+(fset 'yes-or-no-p 'y-or-n-p)
+
+;; Go straight to scratch buffer on startup
+(setq inhibit-startup-message t)
