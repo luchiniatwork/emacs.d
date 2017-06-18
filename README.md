@@ -24,6 +24,16 @@ If you're new to emacs, check out
    about your setup.
 7. Enjoy Emacs!!!
 
+If you intend to use cider, please also follow these two steps:
+
+1. Create the file `~/.lein/profiles.clj` (Windows users, this is probably
+   `C:\Users\your_user_name\.lein\profiles.clj`).
+2. Add this line to said file:
+
+```clojure
+{:user {:plugins [[cider/cider-nrepl "0.15.0-snapshot"]]}}
+```
+
 ## Organization of the code
 
 There's an effort to separate everything logically and document the purpose
