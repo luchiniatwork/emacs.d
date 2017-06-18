@@ -127,3 +127,8 @@
 (defengine clojars
   "https://clojars.org/search?q=%s"
   :keybinding "j")
+
+;; Creating a clojars search engine
+(defengine wikipedia
+  "https://en.wikipedia.org/wiki/%s"
+  :keybinding "w")
