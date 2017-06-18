@@ -126,6 +126,19 @@ directory to make multiple eshell windows easier."
     (insert (concat "ls"))
     (eshell-send-input)))
 
+;; This function allows new eshells to be created from a given name (say you want
+;; to keep one buffer for logging, one for monitoring a process and one for management
+(defun eshell-new ()
+  "creates a shell with a given name"
+  (interactive)
+  (let ((shell-name (concat "*eshell*<"
+                            (read-string "Shell name: " nil)
+                            ">")))
+    (eshell "new")
+    (rename-buffer shell-name)
+    (insert (concat "ls"))
+    (eshell-send-input)))
+
 ;; "Fix" the up and down arrows to work exactly like I'm used to on cider
 (add-hook 'eshell-mode-hook (lambda ()
                               (define-key eshell-mode-map [up] 'previous-line)
