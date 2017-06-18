@@ -174,8 +174,11 @@
 (load "setup-umlaut.el")
 
 ;; Start Emacs in server mode so that emacsclient can connect to it
+;; It defaults to using a TCP socket and bind it to port 4545.
+;; If you find this to be a security problem, do comment these lines out.
+(setq server-use-tcp t)
+(setq server-port 4545)
 (server-start)
-
 
 
 
@@ -190,6 +193,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(coffee-tab-width 2)
  '(git-gutter:added-sign "+")
  '(git-gutter:deleted-sign "-")
  '(git-gutter:hide-gutter t)
