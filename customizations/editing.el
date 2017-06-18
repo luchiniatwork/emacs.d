@@ -98,8 +98,12 @@
 (global-set-key (kbd "C-c x") 'pbcut)
 (global-set-key (kbd "C-c v") 'pbpaste)
 
-;; Ident automatically after every <RET>
-(setq electric-indent-mode t)
+;; Indent agressively all over the place except in html-mode
+(global-aggressive-indent-mode 1)
+(add-to-list 'aggressive-indent-excluded-modes 'html-mode)
+
+;; Alternatevelly, you can indent automatically after every <RET> with electri-indent-mode
+;; (setq electric-indent-mode nil)
 
 ;; shell scripts defaults
 (setq-default sh-basic-offset 2)

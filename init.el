@@ -36,6 +36,10 @@
     ;; Cheatsheet: http://www.emacswiki.org/emacs/PareditCheatsheet
     paredit
 
+    ;; aggressive-indent-mode is a minor mode that keeps your code always indented.
+    ;; It reindents after every change, making it more reliable than electric-indent-mode.
+    aggressive-indent
+    
     ;; key bindings and code colorization for Clojure
     ;; https://github.com/clojure-emacs/clojure-mode
     clojure-mode
@@ -190,6 +194,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(coffee-tab-width 2)
  '(git-gutter:added-sign "+")
  '(git-gutter:deleted-sign "-")
  '(git-gutter:hide-gutter t)
