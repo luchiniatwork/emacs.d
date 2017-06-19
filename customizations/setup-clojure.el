@@ -30,8 +30,6 @@
 ;; Cider
 ;;;;
 
-;; provides minibuffer documentation for the code you're typing into the repl
-(add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
 
 ;; We want the REPL buffer to be auto-displayed, but don't want it to be focused
 (setq cider-repl-pop-to-buffer-on-connect 'display-only)
