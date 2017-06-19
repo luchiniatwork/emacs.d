@@ -25,8 +25,7 @@
 ;; the normal Elisp library, as these need the better handling of ansiterm:
 (add-hook 'eshell-mode-hook (lambda ()
                               (add-to-list 'eshell-visual-commands "ssh")
-                              (add-to-list 'eshell-visual-commands "tail")
-                              (add-to-list 'eshell-visual-commands "git")))
+                              (add-to-list 'eshell-visual-commands "tail")))
 
 ;;;;;;;;;;
 ;; Series of functions to configure the prompt
