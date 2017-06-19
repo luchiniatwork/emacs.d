@@ -5,9 +5,11 @@
 ;; Define package repositories
 (require 'package)
 (add-to-list 'package-archives
-	     '("tromey" . "http://tromey.com/elpa/") t)
+             '("tromey" . "http://tromey.com/elpa/") t)
 (add-to-list 'package-archives
-	     '("melpa" . "http://melpa.milkbox.net/packages/") t)
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+;; (add-to-list 'package-archives
+;;              '("melpa-stable" . "http://stable.melpa.org/packages/") t)
 
 ;; Load and activate emacs packages. Do this first so that the
 ;; packages are loaded before you start trying to modify them.
@@ -156,7 +158,7 @@
 (add-to-list 'load-path "~/.emacs.d/customizations")
 
 ;; Sets up exec-path-from-shell so that Emacs will use the correct
-;; environment variables
+;; environment variables and other many nice things.
 (load "shell-integration.el")
 
 ;; These customizations make it easier for you to navigate files,
@@ -169,6 +171,9 @@
 
 ;; These customizations make editing a bit nicer.
 (load "editing.el")
+
+;; Mostly bindings for magit
+(load "setup-magit.el")
 
 ;; Langauage-specific settings
 (load "setup-elisp.el")

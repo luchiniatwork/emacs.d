@@ -128,7 +128,7 @@ directory to make multiple eshell windows easier."
 
 ;; This function allows new eshells to be created from a given name (say you want
 ;; to keep one buffer for logging, one for monitoring a process and one for management
-(defun eshell-new ()
+(defun eshell-new-named ()
   "creates a shell with a given name"
   (interactive)
   (let ((shell-name (concat "*eshell*<"
@@ -139,7 +139,32 @@ directory to make multiple eshell windows easier."
     (insert (concat "ls"))
     (eshell-send-input)))
 
+(defun eshell-new ()
+  (interactive)
+  (eshell t)
+  (insert (concat "ls"))
+  (eshell-send-input))
+
+
+;; Alias for an easy find-file
+(defun eshell/e (file)
+  (find-file file))
+
+;; Alias for an easy find-file-other-window
+(defun eshell/eo (file)
+  (find-file-other-window file))
+
+;; Alias for an easy find-file-other-window
+(defun eshell/gs ()
+  (magit-status))
+
+
 ;; "Fix" the up and down arrows to work exactly like I'm used to on cider
 (add-hook 'eshell-mode-hook (lambda ()
                               (define-key eshell-mode-map [up] 'previous-line)
                               (define-key eshell-mode-map [down] 'next-line)))
+
+;; Global bindings to start eshell easily
+(global-set-key (kbd "C-c s n") 'eshell-new-named)
+(global-set-key (kbd "C-c s h") 'eshell-here)
+(global-set-key (kbd "C-c s e") 'eshell-new)
