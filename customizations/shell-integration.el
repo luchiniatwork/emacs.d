@@ -163,7 +163,8 @@ directory to make multiple eshell windows easier."
                               (define-key eshell-mode-map [up] 'previous-line)
                               (define-key eshell-mode-map [down] 'next-line)))
 
-;; Global bindings to start eshell easily
+;; Global bindings to start and manage eshell easily
 (global-set-key (kbd "C-c s n") 'eshell-new-named)
 (global-set-key (kbd "C-c s h") 'eshell-here)
 (global-set-key (kbd "C-c s e") 'eshell-new)
+(global-set-key (kbd "C-c s c") 'eshell/clear)
