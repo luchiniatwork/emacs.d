@@ -62,9 +62,10 @@
 ;; clean-up whitespace before saving
 (add-hook 'before-save-hook 'whitespace-cleanup)
 
-;; Navigation between window numbers
+;; Navigation between buffer numbers
 (require 'window-number)
-(window-number-mode 1)
+;; global minor mode that enables the use of the M- prefix (i.e. M-2 for buffer 2)
+(window-number-meta-mode t)
 
 ;; Splits into 3 windows horizontally balanced
 (defun split-3-windows-horizontally-evenly ()
@@ -80,11 +81,6 @@
 ;; Opposite of the traditional C-x o (other-window)
 (global-set-key (kbd "C-x p") 'previous-multiframe-window)
 
-;; Bind to the traditional C-x o that would normally be on `other-window`
-(global-set-key (kbd "C-c 1") (lambda () (interactive) (window-number-select 1)))
-(global-set-key (kbd "C-c 2") (lambda () (interactive) (window-number-select 2)))
-(global-set-key (kbd "C-c 3") (lambda () (interactive) (window-number-select 3)))
-(global-set-key (kbd "C-c 4") (lambda () (interactive) (window-number-select 4)))
 
 ;; enables guide-key for easy out completion of key bindings
 (require 'guide-key)
