@@ -9,6 +9,9 @@
 ;; Java classes (e.g. JavaClassName)
 (add-hook 'clojure-mode-hook 'subword-mode)
 
+;; Highlight s-expressions
+(add-hook 'clojure-mode-hook 'highlight-sexps-mode)
+
 ;; A little more syntax highlighting
 (require 'clojure-mode-extra-font-locking)
 

@@ -7,10 +7,10 @@
 ;; Lisp-friendly hippie expand
 (setq hippie-expand-try-functions-list
       '(try-expand-dabbrev
-        try-expand-dabbrev-all-buffers
-        try-expand-dabbrev-from-kill
-        try-complete-lisp-symbol-partially
-        try-complete-lisp-symbol))
+	try-expand-dabbrev-all-buffers
+	try-expand-dabbrev-from-kill
+	try-complete-lisp-symbol-partially
+	try-complete-lisp-symbol))
 
 ;; Enable global company mode - autocompletion for everything
 (global-company-mode)
@@ -20,6 +20,9 @@
 
 ;; Highlight current line
 (global-hl-line-mode 1)
+
+;; Load highlight for s-expressions
+(load "highlight-sexps.el")
 
 ;; Interactive search key bindings. By default, C-s runs
 ;; isearch-forward, so this swaps the bindings.
@@ -43,7 +46,7 @@
 ;; put all backups in ~/.emacs.d/backups. More info:
 ;; http://www.gnu.org/software/emacs/manual/html_node/elisp/Backup-Files.html
 (setq backup-directory-alist `(("." . ,(concat user-emacs-directory
-                                               "backups"))))
+					       "backups"))))
 (setq auto-save-default nil)
 
 ;; Basic colors - not the distracting, all-over-the-place colors
@@ -52,8 +55,8 @@
 ;; Make space-mark look like middle dot, newline as an arrow and tab as a right arrow
 (setq whitespace-display-mappings
       '((space-mark 32 [183])
-        (newline-mark 10 [8629 10])
-        (tab-mark 9 [8614 9] [92 9])))
+	(newline-mark 10 [8629 10])
+	(tab-mark 9 [8614 9] [92 9])))
 
 ;; Enable whitespace
 (global-whitespace-mode 1)
