@@ -146,11 +146,11 @@ directory to make multiple eshell windows easier."
 
 
 ;; Alias for an easy find-file
-(defun eshell/e (file)
+(defun eshell/ff (file)
   (find-file file))
 
 ;; Alias for an easy find-file-other-window
-(defun eshell/eo (file)
+(defun eshell/ffo (file)
   (find-file-other-window file))
 
 ;; Alias for an easy find-file-other-window
