@@ -9,3 +9,17 @@
                                 (define-key markdown-mode-map (kbd "C-<left>") 'markdown-demote)
                                 (define-key markdown-mode-map (kbd "M-S-<left>") nil)
                                 (define-key markdown-mode-map (kbd "M-S-<right>") nil)))
+
+;; flymd does not work with any other browser but firefox
+;; This function makes sure firefox is triggered for it
+;; More info here: https://github.com/mola-T/flymd/blob/master/browser.md
+(defun my-flymd-browser-function (url)
+  (let ((process-environment (browse-url-process-environment)))
+    (apply 'start-process
+           (concat "firefox " url)
+           nil
+           "/usr/bin/open"
+           (list "-a" "firefox" url))))
+
+;; uses the function defined above
+(setq flymd-browser-open-function 'my-flymd-browser-function)
