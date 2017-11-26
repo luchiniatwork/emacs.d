@@ -62,11 +62,6 @@
 ;; clean-up whitespace before saving
 (add-hook 'before-save-hook 'whitespace-cleanup)
 
-;; Navigation between buffer numbers
-(require 'window-number)
-;; global minor mode that enables the use of the M- prefix (i.e. M-2 for buffer 2)
-(window-number-meta-mode t)
-
 ;; Splits into 3 windows horizontally balanced
 (defun split-3-windows-horizontally-evenly ()
   (interactive)

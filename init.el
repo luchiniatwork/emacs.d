@@ -91,9 +91,6 @@
     ;; edit html tags like sexps
     tagedit
 
-    ;; show window numbers and allows navigation between them
-    window-number
-
     ;; beautiful monokai theme
     monokai-theme
 
