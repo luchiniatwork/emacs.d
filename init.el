@@ -33,7 +33,7 @@
     ;; aggressive-indent-mode is a minor mode that keeps your code always indented.
     ;; It reindents after every change, making it more reliable than electric-indent-mode.
     aggressive-indent
-    
+
     ;; key bindings and code colorization for Clojure
     ;; https://github.com/clojure-emacs/clojure-mode
     clojure-mode
@@ -50,6 +50,9 @@
 
     ;; Yaml-mode
     yaml-mode
+
+    ;; support to TOML files
+    toml-mode
 
     ;; SCSS mode
     scss-mode
@@ -103,10 +106,21 @@
     ;; git-gutter shows git changes on the gutter
     git-gutter
 
-    ;; because sometimes moving windows around is just simpler with this
-    transpose-frame
+    ;; flycheck allows on-the-fly syntax checking
+    flycheck
 
-    ))
+    ;; for Rust we need cargo (which will also install rust-mode)
+    cargo
+
+    ;; flycheck support for Rust
+    flycheck-rust
+
+    ;; racer is the gives auto-completion capabilities to Rust
+    ;; According to https://github.com/racer-rust/emacs-racer you also need to
+    ;; install racer on your system like this:
+    ;; $ rustup component add rust-src
+    ;; $ cargo install racer
+    racer))
 
 ;; On OS X, an Emacs instance started from the graphical user
 ;; interface will have a different environment than a shell in a
@@ -164,12 +178,16 @@
 ;; Mostly bindings for magit
 (load "setup-magit.el")
 
+;; Flycheck for on-the-fly syntax checking
+(load "setup-flycheck.el")
+
 ;; Langauage-specific settings
 (load "setup-elisp.el")
 (load "setup-clojure.el")
 (load "setup-markdown.el")
 (load "setup-js.el")
 (load "setup-umlaut.el")
+(load "setup-rust.el")
 
 ;; Start Emacs in server mode so that emacsclient can connect to it
 (server-start)
@@ -196,7 +214,7 @@
  '(git-gutter:update-interval 2)
  '(package-selected-packages
    (quote
-    (company-lua lua-mode transpose-frame git-gutter magit tagedit rainbow-delimiters projectile smex ido-ubiquitous scss-mode yaml-mode markdown-mode cider clojure-mode-extra-font-locking clojure-mode paredit exec-path-from-shell)))
+    (flycheck-rust flycheck cargo company-lua lua-mode transpose-frame git-gutter magit tagedit rainbow-delimiters projectile smex ido-ubiquitous scss-mode yaml-mode markdown-mode cider clojure-mode-extra-font-locking clojure-mode paredit exec-path-from-shell)))
  '(safe-local-variable-values
    (quote
     ((cider-cljs-lein-repl . "(do (user/go) (user/cljs-repl))")

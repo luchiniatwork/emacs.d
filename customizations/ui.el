@@ -75,7 +75,7 @@
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1) ((control) . nil)))
 (setq mouse-wheel-progressive-speed nil)
 
-;; enabling and setting up git-gutter 
+;; enabling and setting up git-gutter
 (global-git-gutter-mode 1)
 (custom-set-variables
  '(git-gutter:update-interval 2))
