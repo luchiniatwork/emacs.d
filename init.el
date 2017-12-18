@@ -214,7 +214,7 @@
  '(git-gutter:update-interval 2)
  '(package-selected-packages
    (quote
-    (flycheck-rust flycheck cargo company-lua lua-mode transpose-frame git-gutter magit tagedit rainbow-delimiters projectile smex ido-ubiquitous scss-mode yaml-mode markdown-mode cider clojure-mode-extra-font-locking clojure-mode paredit exec-path-from-shell)))
+    (fill-column-indicator flycheck-rust flycheck cargo company-lua lua-mode transpose-frame git-gutter magit tagedit rainbow-delimiters projectile smex ido-ubiquitous scss-mode yaml-mode markdown-mode cider clojure-mode-extra-font-locking clojure-mode paredit exec-path-from-shell)))
  '(safe-local-variable-values
    (quote
     ((cider-cljs-lein-repl . "(do (user/go) (user/cljs-repl))")

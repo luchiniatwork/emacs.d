@@ -21,9 +21,6 @@
 ;; Highlight current line
 (global-hl-line-mode 1)
 
-;; Load highlight for s-expressions
-(load "highlight-sexps.el")
-
 ;; Interactive search key bindings. By default, C-s runs
 ;; isearch-forward, so this swaps the bindings.
 (global-set-key (kbd "C-s") 'isearch-forward-regexp)
