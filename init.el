@@ -106,6 +106,9 @@
     ;; git-gutter shows git changes on the gutter
     git-gutter
 
+    ;; wakatime collects usage stats and generates a nice dashboard online
+    wakatime-mode
+
     ;; flycheck allows on-the-fly syntax checking
     flycheck
 
@@ -136,6 +139,13 @@
 (dolist (p my-packages)
   (when (not (package-installed-p p))
     (package-install p)))
+
+;; Makes sure that wakatime is used for all buffers
+(global-wakatime-mode)
+;; My personal wakatime API key
+(setq wakatime-api-key "e7876e69-1501-4799-93aa-4b6da67d5508")
+;; Wakatime's binary needs to be installed seperately
+(setq wakatime-cli-path "/usr/local/bin/wakatime")
 
 
 ;; Place downloaded elisp files in ~/.emacs.d/vendor. You'll then be able
