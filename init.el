@@ -11,6 +11,10 @@
 ;; (add-to-list 'package-archives
 ;;              '("melpa-stable" . "http://stable.melpa.org/packages/") t)
 
+;; Setting package-enable-at-startup to nil prevents a second package load
+;; and slightly improves startup time.
+(setq package-enable-at-startup nil)
+
 ;; Load and activate emacs packages. Do this first so that the
 ;; packages are loaded before you start trying to modify them.
 ;; This also sets the load path.
@@ -21,6 +25,16 @@
 ;; makes them available for download.
 (when (not package-archive-contents)
   (package-refresh-contents))
+
+;; If use-package is not installed, install it.
+(unless (package-installed-p 'use-package)
+  (package-install 'use-package))
+
+;; This stops emacs adding customised settings to init.el. I try to avoid
+;; using customize anyway, preferring programmatic control of variables.
+;; Creating it as a temporary file effectively disables it
+;; (i.e. any changes are session local).
+(setq custom-file (make-temp-file "emacs-custom"))
 
 ;; The packages you want installed. You can also install these
 ;; manually with M-x package-install
@@ -99,12 +113,6 @@
 
     ;; the much loved smooth scrolling
     smooth-scrolling
-
-    ;; git integration
-    magit
-
-    ;; git-gutter shows git changes on the gutter
-    git-gutter
 
     ;; wakatime collects usage stats and generates a nice dashboard online
     wakatime-mode
@@ -185,8 +193,8 @@
 ;; These customizations make editing a bit nicer.
 (load "editing.el")
 
-;; Mostly bindings for magit
-(load "setup-magit.el")
+;; Mostly bindings for git
+(load "setup-git.el")
 
 ;; Flycheck for on-the-fly syntax checking
 (load "setup-flycheck.el")
