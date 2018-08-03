@@ -70,13 +70,7 @@
 
     ;; SCSS mode
     scss-mode
-
-    ;; restclient-mode is a great tool for debugging APIs
-    restclient
-
-    ;; allows setting up search engines onto emacs
-    engine-mode
-
+    
     ;; for editing dockerfiles
     dockerfile-mode
 
@@ -135,6 +129,12 @@
     ;; $ rustup component add rust-src
     ;; $ cargo install racer
     racer
+
+    ;; restclient-mode is a great tool for debugging APIs
+    restclient
+
+    ;; allows setting up search engines onto emacs
+    engine-mode
     
     ;; web-server to server files straight from emacs
     web-server))
