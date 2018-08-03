@@ -1,5 +1,10 @@
-;; markdown
-(add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
+(use-package markdown-mode
+  :ensure t
+  :commands (markdown-mode gfm-mode)
+  :mode (("README\\.md\\'" . gfm-mode)
+         ("\\.md\\'" . markdown-mode)
+         ("\\.markdown\\'" . markdown-mode))
+  :init (setq markdown-command "multimarkdown"))
 
 ;; "Fix" the left and right arrows to work exactly like I'm used to everywhere else
 (add-hook 'markdown-mode-hook (lambda ()
