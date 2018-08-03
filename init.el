@@ -111,6 +111,9 @@
     ;; beautiful monokai theme
     monokai-theme
 
+    ;; cyberpunk theme is a darker mood theme I like
+    cyberpunk-theme
+
     ;; the much loved smooth scrolling
     smooth-scrolling
 
