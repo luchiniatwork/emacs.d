@@ -131,7 +131,10 @@
     ;; install racer on your system like this:
     ;; $ rustup component add rust-src
     ;; $ cargo install racer
-    racer))
+    racer
+    
+    ;; web-server to server files straight from emacs
+    web-server))
 
 ;; On OS X, an Emacs instance started from the graphical user
 ;; interface will have a different environment than a shell in a
@@ -199,13 +202,20 @@
 ;; Flycheck for on-the-fly syntax checking
 (load "setup-flycheck.el")
 
+;; Serving files as a web server (very useful)
+(load "setup-serve-this.el")
+
 ;; Langauage-specific settings
 (load "setup-elisp.el")
 (load "setup-clojure.el")
 (load "setup-markdown.el")
 (load "setup-js.el")
+(load "setup-html.el")
 (load "setup-umlaut.el")
 (load "setup-rust.el")
+(load "setup-extras.el")
+
+(load "~/.finda/integrations/emacs/finda.el")
 
 ;; Start Emacs in server mode so that emacsclient can connect to it
 (server-start)
