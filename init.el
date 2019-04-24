@@ -5,9 +5,9 @@
 ;; Define package repositories
 (require 'package)
 (add-to-list 'package-archives
-             '("tromey" . "http://tromey.com/elpa/") t)
+	     '("tromey" . "http://tromey.com/elpa/") t)
 (add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+	     '("melpa" . "http://melpa.milkbox.net/packages/") t)
 ;; (add-to-list 'package-archives
 ;;              '("melpa-stable" . "http://stable.melpa.org/packages/") t)
 
@@ -70,7 +70,7 @@
 
     ;; SCSS mode
     scss-mode
-    
+
     ;; for editing dockerfiles
     dockerfile-mode
 
@@ -81,7 +81,7 @@
     ;; customizations/navigation.el line 23 for a description
     ;; of ido
     ido-completing-read+
-    
+
     ;; Enhances M-x to allow easier execution of commands. Provides
     ;; a filterable list of possible commands in the minibuffer
     ;; http://www.emacswiki.org/emacs/Smex
@@ -135,7 +135,7 @@
 
     ;; allows setting up search engines onto emacs
     engine-mode
-    
+
     ;; web-server to server files straight from emacs
     web-server))
 

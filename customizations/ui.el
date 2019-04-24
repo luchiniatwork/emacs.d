@@ -26,7 +26,8 @@
 ;; for a more technical explanation.
 ;; (add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 ;; (add-to-list 'load-path "~/.emacs.d/themes")
-(load-theme 'cyberpunk-theme t)
+(add-hook 'after-init-hook
+	  (lambda () (load-theme 'cyberpunk t)))
 
 ;; increase font size for better readability - Monaco is also lovely
 (set-face-attribute 'default nil :font "Monaco" :height 120)
