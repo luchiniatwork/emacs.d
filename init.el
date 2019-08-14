@@ -4,12 +4,19 @@
 
 ;; Define package repositories
 (require 'package)
-(add-to-list 'package-archives
-	     '("tromey" . "http://tromey.com/elpa/") t)
-(add-to-list 'package-archives
-	     '("melpa" . "http://melpa.milkbox.net/packages/") t)
-;; (add-to-list 'package-archives
-;;              '("melpa-stable" . "http://stable.melpa.org/packages/") t)
+(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+                         ("melpa" . "http://melpa.org/packages/")
+			 ("tromey" . "http://tromey.com/elpa/")))
+
+;;(add-to-list 'package-archives
+;;	     '("tromey" . "http://tromey.com/elpa/") t)
+;;(add-to-list 'package-archives
+;;	     '("melpa" . "http://melpa.milkbox.net/packages/") t)
+;;(add-to-list 'package-archives
+;;	     '("gnu" . "http://elpa.gnu.org/packages/") t)
+
+;;(add-to-list 'package-archives
+;;             '("melpa-stable" . "http://stable.melpa.org/packages/") t)
 
 ;; Setting package-enable-at-startup to nil prevents a second package load
 ;; and slightly improves startup time.
