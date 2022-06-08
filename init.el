@@ -166,7 +166,7 @@
 ;; My personal wakatime API key
 (setq wakatime-api-key "e7876e69-1501-4799-93aa-4b6da67d5508")
 ;; Wakatime's binary needs to be installed seperately
-(setq wakatime-cli-path "/usr/local/bin/wakatime")
+(setq wakatime-cli-path "/run/current-system/sw/bin/wakatime-cli")
 
 
 ;; Place downloaded elisp files in ~/.emacs.d/vendor. You'll then be able
